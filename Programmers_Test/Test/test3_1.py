@@ -28,4 +28,5 @@ def solution(n):
     return answer%1234567
 
 
-print(solution(2000))
+for i in range(1,12):
+    print(solution(i))
