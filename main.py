@@ -1,4 +1,5 @@
-a = [1,1,1,2,3]
-a.remove(1)
-a.remove(1)
-print(a)
+import fractions
+
+f = fractions.Fraction(213216515135135,2131451515151)
+
+print(type(f),f.numerator,f.denominator)
