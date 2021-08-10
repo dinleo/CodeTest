@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/83201?language=python3
 def solution(scores):
     # 전치행렬
     l = len(scores)

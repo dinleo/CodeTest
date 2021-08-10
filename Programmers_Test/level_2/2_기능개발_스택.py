@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/42586?language=python3
 def solution(progresses, speeds):
     answer = []
     while progresses != []:

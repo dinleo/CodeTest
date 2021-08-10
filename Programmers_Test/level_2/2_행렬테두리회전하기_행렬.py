@@ -1,3 +1,4 @@
+
 def solution(rows, columns, queries):
     answer = []
     arr = [[i * columns + j + 1 for j in range(columns)] for i in range(rows)]

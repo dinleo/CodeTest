@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/12973?language=python3
 def solution(s):
     stack = [1]
     for i in s:

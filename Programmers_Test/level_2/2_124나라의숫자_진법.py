@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/12899?language=python3
 def solution(n):
     number = n-1
     T = "124"

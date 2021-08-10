@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/60057?language=python3
 def solution(s):
     answer = len(s)
     for n in range(1,int(len(s)/2) + 1) :

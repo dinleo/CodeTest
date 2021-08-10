@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/49189?language=python3
 def solution(n, edge):
     import collections
     check = [1]+[0]*(n-1)
