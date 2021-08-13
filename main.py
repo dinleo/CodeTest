@@ -1,5 +1,3 @@
-import fractions
+arr = [[]]+[[int(str(5) * i)] for i in range(1,8)]
 
-f = fractions.Fraction(213216515135135,2131451515151)
-
-print(type(f),f.numerator,f.denominator)
+print(arr)
