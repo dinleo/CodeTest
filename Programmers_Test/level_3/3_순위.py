@@ -1,33 +1,54 @@
 def solution(n, results):
     if n == 1:
         return 1
-    g_win = [[] for i in range(n)]
-    g_lose = [[] for i in range(n)]
-    g_count = [0 for i in range(n)]
+    answer = 0
+    global next_n
+    global prev_n
+    next_n = [[] for i in range(n + 1)]
+    prev_n = [[] for i in range(n + 1)]
+
     for i in results:
-        i[0] -= 1
-        i[1] -= 1
+        next_n[i[1]].append(i[0])
+        prev_n[i[0]].append(i[1])
 
-    # r[0]승자 r[1]패자
-    for r in results:
-        win_count = 1
-        lose_count = 1
-        # 승리시, 패자 아래있는 인원수까지 count +=
-        for i in g_win[r[1]]:
-            if i not in g_win[r[0]]:
-                win_count += 1
-        # 패배시, 승자 위있는 인원수까지 count +=
-        for i in g_lose[r[0]]:
-            if i not in g_lose[r[1]]:
-                lose_count += 1
-        g_count[r[0]] += win_count
-        g_count[r[1]] += lose_count
+    print(next_n)
+    print(prev_n)
+    for i in range(1, n + 1):
+        for j in next_n[i]:
+            add_next(i, j)
+        for j in prev_n[i]:
+            add_prev(i, j)
 
-        g_lose[r[1]].append(r[0])
-        g_win[r[0]].append(r[1])
-
-    answer = g_count.count(n - 1)
+    for i in range(1, n + 1):
+        if len(next_n[i]) + len(prev_n[i]) == n - 1:
+            answer += 1
+    print(next_n)
+    print(prev_n)
     return answer
+
+
+def add_next(self, i):
+    # '자신보다 next인 선수'보다 next인 선수들을 모두 추가
+    if not next_n:
+        if i not in next_n[self]:
+            next_n[self].append(i)
+        return
+    for j in next_n[i]:
+        if j not in next_n[self]:
+            next_n[self].append(j)
+            add_next(self, j)
+
+
+def add_prev(self, i):
+    # '자신보다 prev인 선수'보다 prev인 선수들을 모두 추가
+    if not prev_n:
+        if i not in prev_n[self]:
+            prev_n[self].append(i)
+        return
+    for j in prev_n[i]:
+        if j not in prev_n[self]:
+            prev_n[self].append(j)
+            add_prev(self, j)
 
 
 print(solution(5, [[4, 3], [4, 2], [3, 2], [1, 2], [2, 5]]))
