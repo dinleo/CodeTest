@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/42895?language=python3
 def solution(NUM, number):
     arr = [[]] + [[int(str(NUM) * i)] for i in range(1,9)]
 

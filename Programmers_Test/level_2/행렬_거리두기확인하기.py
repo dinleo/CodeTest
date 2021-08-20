@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/81302?language=python3
 def solution(places):
     global place
     answer = [0 for _ in range(5)]

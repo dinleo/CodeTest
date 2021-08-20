@@ -1,4 +1,4 @@
-# 그냥 분업 연습 해보고 싶었던 코드입니다.
+# https://programmers.co.kr/learn/courses/30/lessons/84021?language=python3
 
 def solution(game_board, table):
     answer = 0

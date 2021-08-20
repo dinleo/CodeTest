@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/82612?language=python3
 import math
 
 def solution(price, money, count):

@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/49191?language=python3
 def solution(n, results):
     if n == 1:
         return 1
