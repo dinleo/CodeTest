@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/67257?language=python3
 from itertools import permutations
 import re
 

@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/42860?language=python3
 def solution(name):
     answer = 0
     n = len(name)
