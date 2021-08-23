@@ -1,1 +1,1 @@
-print({0,1} <= {0,1,2,})
+print(0b1000.bit_length())
