@@ -5,7 +5,7 @@ def solution(maps):
     map = maps
     route_count = []  # 목적지 도달시 각 경로로 걸린 count 를 저장 할 배열
     min_route = [[-1 for _ in range(m)] for _ in range(n)]
-    save_point = []  # 재귀 깊이가 약 500을 도달 했을 때를 대비한 save_point (ex, [[i,j,count],[...],...])
+    save_point = []  # 재귀 깊이가 약 10을 도달 했을 때를 대비한 save_point (ex, [[i,j,count],[...],...])
 
     # 시작점에 대해 next_step 시행
     next_step(0, 0, 1, 0)
@@ -32,6 +32,7 @@ def next_step(i, j, count, new_count):  # 상하좌우로 캐릭터를 움직이
     if min_route[i][j] != -1:
         if min_route[i][j] <= count:
             return
+    # 그렇지 않거나 초행길일 경우, 최단 경로 간주하고 현재의 count 를 추가
     min_route[i][j] = count
     # 벽이 아니면 상하좌우에 대해 재귀시행
     if i != n - 1 and map[i + 1][j] != 0:

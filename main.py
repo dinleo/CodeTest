@@ -1,3 +1,1 @@
-for i in range(3):
-    for j in range(3):
-        print([i,j])
+print({0,1} <= {0,1,2,})
