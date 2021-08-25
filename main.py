@@ -1,1 +1,1 @@
-print(0b1000.bit_length())
+print("{0:0>4s}".format(bin(15).split("b")[-1]))
