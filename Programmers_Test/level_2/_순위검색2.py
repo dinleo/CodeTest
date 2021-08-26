@@ -8,7 +8,7 @@ def solution(info, query):
 
     # [[score, {key}], ...] 형식으로 변환
     info = [[int(info[i][-1])] + [set(info[i][:4])] for i in range(len(info))]
-    # [[score, {key}, query_index1], ...] 형식으로 변환 (key에서 "-" 제외)
+    # [[score, {key}, query_index1], ...] 형식으로 변환 (key 에서 "-" 제외)
     query = [[int(query[i][-1])] + [set(j for j in query[i][:4] if j != "-")]+[i] for i in range(len(query))]
 
     query.sort()
