@@ -1,19 +1,19 @@
 # https://programmers.co.kr/learn/courses/30/lessons/72412?language=python3
 from collections import defaultdict
+import bisect
 import heapq
 
 
 def solution(info, query):
     answer = []
-
-    # str -> list 로 변형
-    info = [info[i].split(" ") for i in range(len(info))]
+    # [[keys, score], ...] 형식으로 변환
     query = [[j for j in query[i].split(" ") if j != "and"] for i in range(len(query))]
     query = [["".join(query[i][0:4])] + [int(query[i][-1])] for i in range(len(query))]
 
     # "javabackendjuniorpizza" 등을 key 로 갖고 점수를 value 로 갖는 dic 생성
     dic = defaultdict(list)
     for i in info:
+        person = i.split(" ")
         for j in range(16):
             # bin 을 이용해 "-"를 포함해 나올 수 있는 모든 keys 경우의 수에 점수 추가 (ex, "----","---pizza",...,"javabackendjuniorpizza")
             s = ""
@@ -22,18 +22,16 @@ def solution(info, query):
                 if bin_code[k] == "0":
                     s += "-"
                 else:
-                    s += i[k]
-            dic[s].append(int(i[-1]))
+                    s += person[k]
+            bisect.insort(dic[s], int(person[-1]))
 
     # score 기준을 넘기는 인원이 몇 명인지 count
     for q in query:
-        count = 0
         arr = dic[q[0]]
-        for a in arr:
-            if a < q[1]:
-                break
-            count += 1
-        answer.append(count)
+        if not arr:
+            answer.append(0)
+            continue
+        answer.append(len(arr) - bisect.bisect_left(arr, q[1]))
 
     return answer
 

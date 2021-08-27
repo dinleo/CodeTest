@@ -1,1 +1,6 @@
-print("{0:0>4s}".format(bin(15).split("b")[-1]))
+import bisect
+
+
+arr = [[1,"@"],[2,"4"],[10,"we"]]
+
+print(bisect.bisect_left(arr,3))
