@@ -1,1 +1,2 @@
-print((7*1980+1860*3))
+for i in range(3,0,-1):
+    print(i)
