@@ -1,4 +1,4 @@
-# https://programmers.co.kr/learn/courses/30/lessons/81303?language=python3
+4       # https://programmers.co.kr/learn/courses/30/lessons/81303?language=python3
 
 def solution(n, k, cmd):
     arr = ["O" for _ in range(n)]
