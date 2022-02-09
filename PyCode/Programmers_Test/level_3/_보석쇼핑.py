@@ -5,7 +5,7 @@ from collections import defaultdict
 def solution(gems):
     i_max, i_min = 100000, 0
 
-    # key = 보석이름, value = 인덱스 인 dict 를 생성d
+    # key = 보석이름, value = 인덱스 인 dict 를 생성
     g_set = set(gems)
     g_dict = defaultdict(int)
     for g in g_set:
