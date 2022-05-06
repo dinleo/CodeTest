@@ -12,7 +12,7 @@ def solution(bridge_length, weight, truck_weights):
     j = -1
     while 1:
         answer += 1
-        # print("=========",answer,"초 ============")
+        print("=========",answer,"초 ============")
         if j + 1 < len(t):
             if bridge + t[j+1] <= w:
                 j += 1
@@ -22,7 +22,10 @@ def solution(bridge_length, weight, truck_weights):
         if t_t[i] == l:
             bridge -= t[i]
             i += 1
-        # print(i, j, answer, t_t)
+        print(i, j, answer, t_t)
         if t_t[len(t)-1] == l:
             break
     return answer + 1
+
+
+solution(2,10,[7,4,5,6])
