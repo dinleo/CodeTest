@@ -1,6 +1,12 @@
-import collections
+import time
 
-d = collections.defaultdict(int)
-d['1'] = 3
+import requests, json
 
-print(d['2'])
+header = {'Content-Type': 'application/json'}
+
+
+r = requests.get('https://fapi.binance.com/fapi/v1/ticker/24hr?symbol=BTCUSDT', headers=header)
+j = r.json()
+
+print(j['priceChangePercent'])
+
