@@ -1,16 +1,17 @@
 import requests
+# 출처: https://github.com/cpm0722/kakao-2022-round2/blob/master/http_json.py
 
-base_url = 'https://huqeyhi95c.execute-api.ap-northeast-2.amazonaws.com/prod'
-auth_key = '7da66c91-3745-40f0-a8ac-1e89a0e3508f'
+base_url = 'https://68ecj67379.execute-api.ap-northeast-2.amazonaws.com/api'
+x_auth_key = 'f08efca7a3a4dd17163985b27dfea7d3'
 
 
-def http_method(method: str, sub_url: str, data={}, token="", init=False):
+def http_method(method: str, sub_url: str, token="", data={}, start=False):
     assert method in ["GET", "POST", "PUT"]
     headers = {'Accept': "application/json", 'Content-Type': "application/json"}
-    if init is True:
-        headers['X-Auth-Token'] = token
+    if start is True:
+        headers['X-Auth-Token'] = x_auth_key
     else:
-        headers['Authorization'] = auth_key
+        headers['Authorization'] = token
 
     if method == "GET":
         response = requests.get(base_url + sub_url, headers=headers)
