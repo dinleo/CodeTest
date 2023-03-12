@@ -1,12 +1,14 @@
-import time
-
-import requests, json
-
-header = {'Content-Type': 'application/json'}
+def IC(a):
+    return int(a)
 
 
-r = requests.get('https://fapi.binance.com/fapi/v1/ticker/24hr?symbol=BTCUSDT', headers=header)
-j = r.json()
+m = map(IC, input("좌표를 입력해 주세요 : ").split(","))
+x = m.__next__()
 
-print(j['priceChangePercent'])
+try:
+    y = m.__next__()
+except:
+    y = "없음처리"
 
+print(x, y)
+a = 'test'
